@@ -28,6 +28,9 @@ class FeedbackCreate(FeedbackBase):
     pass
 
 class FeedbackUpdate(FeedbackBase):
+    strengths: Optional[str] = None
+    areas_to_improve: Optional[str] = None
+    sentiment: Optional[str] = None
     acknowledged: Optional[bool] = None
     employee_comment: Optional[str] = None
 
