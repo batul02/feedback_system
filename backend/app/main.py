@@ -2,10 +2,21 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordRequestForm
 from . import models, schemas, database, crud, auth
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
 models.Base.metadata.create_all(bind=database.engine)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # or ["*"] to allow all origins, but restrict in production!
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 def get_db():
     db = database.SessionLocal()
