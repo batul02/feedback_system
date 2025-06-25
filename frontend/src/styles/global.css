@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f9fb;
+  color: #222;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+:root {
+  --primary: #007bff;
+  --danger: #d9534f;
+  --success: #5cb85c;
+  --gray: #f8f9fa;
+  --dark: #222;
+}
